@@ -27,20 +27,6 @@ gsap.from("#text2", {
     ease: "power2.out"
 });
 
-// Scroll Animation for Section 3
-gsap.from("#copy-container", {
-    scrollTrigger: {
-        trigger: "#copy-container",
-        start: "top 90%",
-        end: "top 40%",
-        scrub: 1
-    },
-    y: 100,
-    opacity: 0,
-    rotateX: -30,
-    duration: 1
-});
-
 // Floating background circles
 gsap.to("#circle1", {
     x: 100,
@@ -58,45 +44,6 @@ gsap.to("#circle2", {
     repeat: -1,
     yoyo: true,
     ease: "sine.inOut"
-});
-
-// Copy to Clipboard Interaction
-const copyContainer = document.getElementById('copy-container');
-const pathText = document.getElementById('path-text');
-const copyBadge = document.getElementById('copy-badge');
-
-copyContainer.addEventListener('click', () => {
-    const textToCopy = "\\\\hofssv.tisconet.com\\ho_rollout$";
-    
-    // Copy to clipboard
-    navigator.clipboard.writeText(textToCopy).then(() => {
-        // Success Animation
-        gsap.to(copyBadge, {
-            opacity: 1,
-            scale: 1,
-            y: -10,
-            duration: 0.3,
-            ease: "back.out(2)"
-        });
-        
-        gsap.to(pathText, {
-            color: "#f43f5e",
-            duration: 0.1,
-            yoyo: true,
-            repeat: 1
-        });
-
-        // Reset badge
-        setTimeout(() => {
-            gsap.to(copyBadge, {
-                opacity: 0,
-                scale: 0.5,
-                y: 0,
-                duration: 0.5,
-                ease: "power2.in"
-            });
-        }, 2000);
-    });
 });
 
 // Parallax Main Container
