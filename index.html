@@ -18,8 +18,14 @@
             background: radial-gradient(circle, rgba(255,241,242,1) 0%, rgba(255,228,230,1) 100%);
         }
         .text-huge {
-            font-size: clamp(3rem, 10vw, 8rem);
-            line-height: 0.9;
+            font-size: clamp(2.5rem, 12vw, 8rem);
+            line-height: 1.1;
+            word-break: keep-all;
+        }
+        @media (min-width: 768px) {
+            .text-huge {
+                line-height: 0.9;
+            }
         }
         .text-glow {
             text-shadow: 0 0 20px rgba(244, 63, 94, 0.2);
@@ -30,32 +36,32 @@
 
     <!-- Background Decoration -->
     <div class="fixed inset-0 pointer-events-none opacity-20">
-        <div id="circle1" class="absolute w-96 h-96 bg-rose-300 rounded-full blur-[100px] -top-20 -left-20"></div>
-        <div id="circle2" class="absolute w-80 h-80 bg-pink-200 rounded-full blur-[80px] bottom-0 right-0"></div>
+        <div id="circle1" class="absolute w-64 h-64 md:w-96 md:h-96 bg-rose-300 rounded-full blur-[60px] md:blur-[100px] -top-20 -left-20"></div>
+        <div id="circle2" class="absolute w-56 h-56 md:w-80 md:h-80 bg-pink-200 rounded-full blur-[50px] md:blur-[80px] bottom-0 right-0"></div>
     </div>
 
-    <main class="relative z-10 flex flex-col items-center justify-center p-8 min-h-screen text-center">
+    <main class="relative z-10 flex flex-col items-center justify-center p-6 md:p-8 min-h-screen text-center">
         
         <!-- Section 1 -->
-        <section class="min-h-screen flex flex-col justify-center items-center gap-12">
+        <section class="min-h-screen flex flex-col justify-center items-center py-20 gap-8 md:gap-12">
             <h1 id="text1" class="text-huge font-black uppercase tracking-tighter text-glow">
-                อย่าลืมกด<span class="text-rose-400">สมใจ 2</span> <br>
+                อย่าลืมกด<span class="text-rose-400">สมใจ 2</span> <br class="hidden md:block">
                 ก่อนเปลี่ยนเครื่อง <br>
                 หลังเปลี่ยนเครื่อง<br>
                 อย่าลืมกด <span class="text-rose-400">3</span>
             </h1>
-            <div class="animate-bounce">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="animate-bounce mt-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
             </div>
         </section>
 
         <!-- Section 2 -->
-        <section class="min-h-screen flex flex-col justify-center items-center">
+        <section class="min-h-screen flex flex-col justify-center items-center py-20">
             <h2 id="text2" class="text-huge font-black tracking-tight text-glow">
                 เซ็ตติ้งเครื่องใหม่<br>
-                ให้กด <span class="bg-rose-600 text-white px-4 rounded-xl">ข้อ 7</span> <br>
+                ให้กด <span class="inline-block bg-rose-600 text-white px-4 md:px-6 py-1 rounded-2xl md:rounded-xl">ข้อ 7</span> <br>
                 กดเข้าไป<span class="italic text-rose-400">FOR IT</span> <br>
                 กด <span class="underline decoration-wavy">0B NAC</span>
             </h2>
